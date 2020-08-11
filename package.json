@@ -2,7 +2,7 @@
   "name": "sort-css-rules",
   "displayName": "sort-css-rules",
   "description": "Sorts css rules within selection",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.47.0"
   },
@@ -22,6 +22,10 @@
     ]
   },
   "publisher": "AndrewBeletskiy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whiteand/sort-css-rules-extension.git"
+  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
