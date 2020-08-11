@@ -17,10 +17,11 @@
     "commands": [
       {
         "command": "sort-css-rules.sort",
-        "title": "Sort Selection CSS Rules"
+        "title": "Sort CSS Rules: Sort Selected CSS Rules"
       }
     ]
   },
+  "publisher": "AndrewBeletskiy",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
