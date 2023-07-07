@@ -139,6 +139,10 @@ export function sortCssTree(node: Node | null | undefined | string): void {
       node.value[ind] = declaration;
     }
 
+    for (const child of node.value) {
+      sortCssTree(child);
+    }
+
     return;
   }
 
