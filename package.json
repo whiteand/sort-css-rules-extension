@@ -9,6 +9,11 @@
   "categories": [
     "Other"
   ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onCommand:sort-css-rules.sort",
+    "onCommand:sort-css-rules.sort-all"
+  ],
   "contributes": {
     "commands": [
       {
