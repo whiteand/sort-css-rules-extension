@@ -1,15 +1,27 @@
 # Sort CSS Rules
 
-This extension is used to sort css rules lines according predefined order
+This extension is used to sort CSS properties according to predefined order
 
 ## How to use:
 
-1. Select lines with css rules (one rule per each line)
+### How to sort selected CSS properties
+
+1. Select lines with CSS rules (one rule per each line)
 2. Press `Ctrl + Shift + P`
-3. Enter `Sort CSS Rules: Sort Selected CSS Rules`
+3. Enter `Sort CSS Rules: Sort Selected CSS Properties`
 4. Press `Enter`
 
-Css rules under selection should be sorted according the order below.
+CSS properties under selection should be sorted according to the order below.
+
+### How to sort all CSS properties in the file:
+
+2. Press `Ctrl + Shift + P`
+3. Enter `Sort CSS Rules: Sort All CSS Properties in the File`
+4. Press `Enter`
+
+### Hot keys
+
+I'd recommend assigning hotkeys to the commands above. For example, I use `Alt + A`(`Option + A`) for sorting all rules.
 
 ### Rules Order
 

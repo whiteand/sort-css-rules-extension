@@ -1,6 +1,6 @@
-import { RULES_ORDER } from './RULES_ORDER';
+import { RULES_ORDER } from "./RULES_ORDER";
 
-export const compareRules = (rule1: string, rule2: string) => {
+export const comparePropertyNames = (rule1: string, rule2: string) => {
   if (rule1 === rule2) {
     return 0;
   }
