@@ -9,7 +9,6 @@
   "categories": [
     "Other"
   ],
-  "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
