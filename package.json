@@ -2,7 +2,7 @@
   "name": "sort-css-rules",
   "displayName": "sort-css-rules",
   "description": "Sorts css rules within selection",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "engines": {
     "vscode": "^1.47.0"
   },
