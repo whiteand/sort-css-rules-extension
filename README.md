@@ -19,7 +19,7 @@ CSS declarations under selection should be sorted according to the order below.
 3. Enter `Sort CSS Declarations: Sort All CSS declarations in the File`
 4. Press `Enter`
 
-### Hot keys
+### Hotkeys
 
 I'd recommend assigning hotkeys to the commands above. For example, I use `Alt + A`(`Option + A`) for sorting all declarations.
 
