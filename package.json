@@ -1,8 +1,8 @@
 {
-  "name": "sort-css-rules",
-  "displayName": "sort-css-rules",
-  "description": "Sorts css rules within selection",
-  "version": "1.1.1",
+  "name": "sort-css-declarations",
+  "displayName": "sort-css-declarations",
+  "description": "Sorts css declarations within selection",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.47.0"
   },
@@ -11,25 +11,25 @@
   ],
   "main": "./out/extension.js",
   "activationEvents": [
-    "onCommand:sort-css-rules.sort",
-    "onCommand:sort-css-rules.sort-all"
+    "onCommand:sort-css-declarations.sort",
+    "onCommand:sort-css-declarations.sort-all"
   ],
   "contributes": {
     "commands": [
       {
-        "command": "sort-css-rules.sort",
-        "title": "Sort CSS Rules: Sort Selected CSS Properties"
+        "command": "sort-css-declarations.sort",
+        "title": "Sort CSS Declarations: Sort Selected CSS Declarations"
       },
       {
-        "command": "sort-css-rules.sort-all",
-        "title": "Sort CSS Rules: Sort All CSS Properties in the File"
+        "command": "sort-css-declarations.sort-all",
+        "title": "Sort CSS Declarations: Sort All CSS Declarations in the File"
       }
     ]
   },
   "publisher": "AndrewBeletskiy",
   "repository": {
     "type": "git",
-    "url": "https://github.com/whiteand/sort-css-rules-extension.git"
+    "url": "https://github.com/whiteand/sort-css-declarations-extension.git"
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

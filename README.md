@@ -1,29 +1,29 @@
-# Sort CSS Rules
+# Sort CSS Declarations
 
-This extension is used to sort CSS properties according to predefined order
+This extension is used to sort CSS declarations according to the property names (order is defined below and it is not alphabetical but logical).
 
 ## How to use:
 
-### How to sort selected CSS properties
+### How to sort selected CSS declarations
 
-1. Select lines with CSS rules (one rule per each line)
+1. Select lines with CSS declarations (one declaration per each line)
 2. Press `Ctrl + Shift + P`
-3. Enter `Sort CSS Rules: Sort Selected CSS Properties`
+3. Enter `Sort CSS Declarations: Sort Selected CSS declarations`
 4. Press `Enter`
 
-CSS properties under selection should be sorted according to the order below.
+CSS declarations under selection should be sorted according to the order below.
 
-### How to sort all CSS properties in the file:
+### How to sort all CSS declarations in the file:
 
 2. Press `Ctrl + Shift + P`
-3. Enter `Sort CSS Rules: Sort All CSS Properties in the File`
+3. Enter `Sort CSS Declarations: Sort All CSS declarations in the File`
 4. Press `Enter`
 
 ### Hot keys
 
-I'd recommend assigning hotkeys to the commands above. For example, I use `Alt + A`(`Option + A`) for sorting all rules.
+I'd recommend assigning hotkeys to the commands above. For example, I use `Alt + A`(`Option + A`) for sorting all declarations.
 
-### Rules Order
+### Property names order
 
 - display
 - opacity

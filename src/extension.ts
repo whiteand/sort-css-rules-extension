@@ -12,7 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
   // Now provide the implementation of the command with registerCommand
   // The commandId parameter must match the command field in package.json
   let disposableSort = vscode.commands.registerCommand(
-    "sort-css-rules.sort",
+    "sort-css-declarations.sort",
     () => {
       const activeEditor = vscode.window.activeTextEditor;
       if (!activeEditor) {
@@ -51,7 +51,7 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   let disposeAll = vscode.commands.registerCommand(
-    "sort-css-rules.sort-all",
+    "sort-css-declarations.sort-all",
     () => {
       const activeEditor = vscode.window.activeTextEditor;
       if (!activeEditor) {

@@ -1,6 +1,6 @@
 export function getPropertyNameFromLine(line: string) {
   const trimmedLine = line.trim();
-  const ruleString = trimmedLine.split(":")[0] || "";
+  const propertyName = trimmedLine.split(":")[0] || "";
 
-  return ruleString.trim().toLowerCase();
+  return propertyName.trim().toLowerCase();
 }

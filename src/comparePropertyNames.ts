@@ -1,11 +1,14 @@
-import { RULES_ORDER } from "./RULES_ORDER";
+import { PROPERTY_NAME_ORDER } from "./PROPERTY_NAME_ORDER";
 
-export const comparePropertyNames = (rule1: string, rule2: string) => {
-  if (rule1 === rule2) {
+export const comparePropertyNames = (
+  propertyName1: string,
+  propertyName2: string
+) => {
+  if (propertyName1 === propertyName2) {
     return 0;
   }
-  const index1 = RULES_ORDER.indexOf(rule1);
-  const index2 = RULES_ORDER.indexOf(rule2);
+  const index1 = PROPERTY_NAME_ORDER.indexOf(propertyName1);
+  const index2 = PROPERTY_NAME_ORDER.indexOf(propertyName2);
 
   if (index1 < 0 && index2 < 0) {
     return 0;
