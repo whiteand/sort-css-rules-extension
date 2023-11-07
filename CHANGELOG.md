@@ -7,3 +7,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [Unreleased]
 
 - Initial release
+
+## [0.0.1] 2023 November 08
+
+- Fixed bug with improper sorting of custom properties
+- 
