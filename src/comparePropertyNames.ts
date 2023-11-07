@@ -11,13 +11,13 @@ export const comparePropertyNames = (
   const index2 = PROPERTY_NAME_ORDER.indexOf(propertyName2);
 
   if (index1 < 0 && index2 < 0) {
-    return 0;
+    return propertyName1 > propertyName2 ? 1 : -1;
   }
   if (index1 < 0) {
-    return 1;
+    return -1;
   }
   if (index2 < 0) {
-    return -1;
+    return 1;
   }
   return index1 > index2 ? 1 : -1;
 };

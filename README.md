@@ -25,6 +25,7 @@ I'd recommend assigning hotkeys to the commands above. For example, I use `Alt +
 
 ### Property names order
 
+- <all custom properties>
 - display
 - opacity
 - visibility
