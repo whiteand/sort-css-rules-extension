@@ -13,6 +13,28 @@ This extension is used to sort CSS declarations according to the property names 
 
 CSS declarations under selection should be sorted according to the order below.
 
+### How to configure custom sorting order
+
+Open settings and enter the order of CSS properties that you want to have:
+
+```json
+{
+    "sort-css-declarations.order": [
+        [
+            "z-index",
+            "visibility"
+        ],
+    ]
+}
+```
+
+This configuration means that you want "z-index" to appear earlier than "visibility".
+
+
+> Note: Sorting algorithm is case-sensitive.
+
+> Note: Your rule will only be applied if during sorting these two properties are compared by comparator.
+
 ### How to sort all CSS declarations in the file:
 
 2. Press `Ctrl + Shift + P`
@@ -25,7 +47,7 @@ I'd recommend assigning hotkeys to the commands above. For example, I use `Alt +
 
 ### Property names order
 
-- <all custom properties>
+- &lt; all custom properties &gt;
 - display
 - opacity
 - visibility
