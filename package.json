@@ -24,7 +24,30 @@
         "command": "sort-css-declarations.sort-all",
         "title": "Sort CSS Declarations: Sort All CSS Declarations in the File"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Sort CSS Declarations",
+      "properties": {
+        "sort-css-declarations.order": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "items": false
+          },
+          "default": [],
+          "markdownDescription": "A list of pairs [declarationNameThatShouldBeBefore, declarationNameThatShouldBeAfter].\n\nExample: `[[\"visibility\", \"z-index\"], [\"z-index\", \"display\"]]`\n\nmeans that you want to visibility declaration to be before z-index declaration and z-index declaration should be before display declaration"
+        }
+      }
+    }
   },
   "publisher": "AndrewBeletskiy",
   "repository": {
@@ -54,6 +77,8 @@
     "vscode-test": "^1.4.0"
   },
   "dependencies": {
+    "get-z-index": "^1.2.0",
+    "quartet": "^10.2.2",
     "scss-parser": "^1.0.6"
   }
 }

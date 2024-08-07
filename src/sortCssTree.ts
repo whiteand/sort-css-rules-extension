@@ -28,7 +28,11 @@ function getPropertyName(n: Node): string | null {
   return null;
 }
 
-function compareDeclarations(a: Node, b: Node): number {
+function compareDeclarations(
+  userDefinedComparator: (name1: string, name2: string) => 1 | -1 | 0,
+  a: Node,
+  b: Node
+): number {
   if (a.type !== "declaration" && b.type !== "declaration") {
     return 0;
   }
@@ -55,10 +59,16 @@ function compareDeclarations(a: Node, b: Node): number {
   const aLower = aName.trim().toLowerCase();
   const bLower = bName.trim().toLowerCase();
 
-  return comparePropertyNames(aLower, bLower);
+  return comparePropertyNames(userDefinedComparator, aLower, bLower);
 }
 
-export function sortCssTree(node: Node | null | undefined | string): void {
+export function sortCssTree(
+  userDefinedComparator: (
+    propertyName1: string,
+    propertyName2: string
+  ) => 1 | 0 | -1,
+  node: Node | null | undefined | string
+): void {
   if (!node) {
     return;
   }
@@ -67,13 +77,13 @@ export function sortCssTree(node: Node | null | undefined | string): void {
   }
   if (node.type === "stylesheet") {
     for (const child of node.value) {
-      sortCssTree(child);
+      sortCssTree(userDefinedComparator, child);
     }
     return;
   }
   if (node.type === "atrule") {
     for (const child of node.value) {
-      sortCssTree(child);
+      sortCssTree(userDefinedComparator, child);
     }
     return;
   }
@@ -104,7 +114,7 @@ export function sortCssTree(node: Node | null | undefined | string): void {
   }
   if (node.type === "rule") {
     for (const child of node.value) {
-      sortCssTree(child);
+      sortCssTree(userDefinedComparator, child);
     }
 
     return;
@@ -133,7 +143,9 @@ export function sortCssTree(node: Node | null | undefined | string): void {
       }
     }
 
-    declarations.sort(compareDeclarations);
+    declarations.sort((d1, d2) =>
+      compareDeclarations(userDefinedComparator, d1, d2)
+    );
 
     for (let i = 0; i < declarations.length; i++) {
       const declaration = declarations[i];
@@ -142,7 +154,7 @@ export function sortCssTree(node: Node | null | undefined | string): void {
     }
 
     for (const child of node.value) {
-      sortCssTree(child);
+      sortCssTree(userDefinedComparator, child);
     }
 
     return;
@@ -155,6 +167,6 @@ export function sortCssTree(node: Node | null | undefined | string): void {
     return;
   }
   for (const child of node.value) {
-    sortCssTree(child);
+    sortCssTree(userDefinedComparator, child);
   }
 }
