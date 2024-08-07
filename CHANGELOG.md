@@ -11,4 +11,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [0.0.1] 2023 November 08
 
 - Fixed bug with improper sorting of custom properties
-- 
+  
+## [0.0.1] 2023 November 08
+
+- Fixed bug with improper sorting of custom properties
