@@ -17,7 +17,9 @@ class GroupBuilder {
     return this.nodes.find((x) => x.type === "declaration") ?? null;
   }
   canAppend(node: Node): boolean {
-    if (this.nodes.length === 0) return true;
+    if (this.nodes.length === 0) {
+      return true;
+    }
     const declaration = this.getDeclaration();
     if (node.type === "declaration") {
       return !declaration && this.nodes.length === 0;
@@ -32,12 +34,18 @@ class GroupBuilder {
     // If new node is on the same line as previous we can append it
 
     const lastNode = this.nodes[this.nodes.length - 1];
-    if (lastNode == null || lastNode.start == null) return false;
-    if (lastNode.start.line === node.start?.line) return true;
+    if (lastNode == null || lastNode.start == null) {
+      return false;
+    }
+    if (lastNode.start.line === node.start?.line) {
+      return true;
+    }
     return false;
   }
   build(): IPropertyRelatedNodes[] {
-    if (this.isEmpty()) return [];
+    if (this.isEmpty()) {
+      return [];
+    }
     const declaration = this.getDeclaration();
 
     const group: IPropertyRelatedNodes = {
@@ -48,7 +56,9 @@ class GroupBuilder {
     this.property = "";
     this.nodes = [];
 
-    if (group.nodes.length === 1) return [group];
+    if (group.nodes.length === 1) {
+      return [group];
+    }
 
     if (
       group.nodes.length > 0 &&

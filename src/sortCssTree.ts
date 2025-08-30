@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 import { Node } from "scss-parser";
 import { comparePropertyNames } from "./comparePropertyNames";
 import { groupNodes } from "./groupNodes";

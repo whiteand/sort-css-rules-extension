@@ -8,7 +8,9 @@ export function sortSubset<const T>(
   for (let i = 0; i < arr.length; i++) {
     const x = arr[i];
     const sortable = shouldBeSorted(x, i, arr);
-    if (!sortable) continue;
+    if (!sortable) {
+      continue;
+    }
     elementsToSort.push({ x, i });
     if (sortableSlices.length === 0) {
       sortableSlices.push([i, i + 1]);
@@ -21,11 +23,7 @@ export function sortSubset<const T>(
       sortableSlices.push([i, i + 1]);
     }
   }
-  elementsToSort.sort((a, b) => {
-    const res = cmp(a.x, b.x);
-    if (res !== 0) return res;
-    return a.i - b.i;
-  });
+  elementsToSort.sort((a, b) => cmp(a.x, b.x) || a.i - b.i);
   while (sortableSlices.length > 0) {
     const last = sortableSlices[sortableSlices.length - 1];
     const lastInd = last[1];
