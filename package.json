@@ -4,16 +4,13 @@
   "description": "Sorts css declarations within selection",
   "version": "1.0.3",
   "engines": {
-    "vscode": "^1.47.0"
+    "vscode": "^1.103.0"
   },
   "categories": [
     "Other"
   ],
-  "main": "./out/extension.js",
-  "activationEvents": [
-    "onCommand:sort-css-declarations.sort",
-    "onCommand:sort-css-declarations.sort-all"
-  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [],
   "contributes": {
     "commands": [
       {
@@ -55,30 +52,35 @@
     "url": "https://github.com/whiteand/sort-css-rules-extension"
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "lint": "eslint src --ext ts",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "test": "node ./out/test/runTest.js"
-  },
-  "devDependencies": {
-    "@types/glob": "^7.1.3",
-    "@types/mocha": "^8.0.0",
-    "@types/node": "^14.0.27",
-    "@types/scss-parser": "^1.0.1",
-    "@types/vscode": "^1.47.0",
-    "@typescript-eslint/eslint-plugin": "^3.8.0",
-    "@typescript-eslint/parser": "^3.8.0",
-    "eslint": "^7.6.0",
-    "glob": "^7.1.6",
-    "mocha": "^8.0.1",
-    "typescript": "^3.8.3",
-    "vscode-test": "^1.4.0"
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
   },
   "dependencies": {
     "get-z-index": "^1.2.0",
-    "quartet": "^10.2.2",
+    "quartet": "^11.0.4",
     "scss-parser": "^1.0.6"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.103.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "esbuild": "^0.25.8",
+    "eslint": "^9.32.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.9.2"
   }
 }

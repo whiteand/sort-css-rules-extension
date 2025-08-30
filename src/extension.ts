@@ -3,7 +3,7 @@
 import * as vscode from "vscode";
 import { compareLines } from "./compareLines";
 import { sortCssTree } from "./sortCssTree";
-import { parse, stringify } from "scss-parser";
+import { Node, parse, stringify } from "scss-parser";
 import { e as v } from "quartet";
 import { safeCompile } from "get-z-index";
 
@@ -133,8 +133,23 @@ export function activate(context: vscode.ExtensionContext) {
 
       const text = document.getText();
 
-      const css = parse(text);
+      let css: Node | undefined;
 
+      try {
+        css = parse(text);
+      } catch (error) {
+        // Showing notification
+        vscode.window.showErrorMessage(
+          `Cannot parse the CSS/SCSS:\n${(error as Error)?.message ?? error}`
+        );
+        // Logging to output
+        console.error("Error parsing CSS/SCSS:", error);
+        return;
+      }
+
+      if (!css) {
+        return;
+      }
       const userComparator = getUserDefinedComparator();
       if (!userComparator.isOk) {
         return;
