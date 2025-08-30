@@ -2,7 +2,7 @@
   "name": "sort-css-declarations",
   "displayName": "sort-css-declarations",
   "description": "Sorts css declarations within selection",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "engines": {
     "vscode": "^1.103.0"
   },
